@@ -82,6 +82,14 @@
 				]
 			}
 		},
+		// 页面分享
+		onShareAppMessage: function() {
+			return {
+				title: '腾业服务',
+				desc: '',
+				path: '/pages/server/main'
+			}
+		},
 		methods: {
 			handling(){
 				uni.showToast({

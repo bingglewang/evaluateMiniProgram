@@ -42,6 +42,14 @@
 				showBtn: false
 			};
 		},
+		// 页面分享
+		onShareAppMessage: function() {
+			return {
+				title: '微信付款',
+				desc: '扫我付款',
+				path: '/pages/myqr/main'
+			}
+		},
 		onLoad() {
 			// #ifdef APP-PLUS
 			this.showBtn = true;

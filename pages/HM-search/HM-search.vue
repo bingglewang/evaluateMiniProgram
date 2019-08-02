@@ -79,6 +79,14 @@
 			//引用mSearch组件，如不需要删除即可
 			mSearch
 		},
+		// 页面分享
+		onShareAppMessage: function() {
+			return {
+				title: '评估进度',
+				desc: '',
+				path: '/pages/HM-search/main'
+			}
+		},
 		methods: {
 			init() {
 				this.loadDefaultKeyword();

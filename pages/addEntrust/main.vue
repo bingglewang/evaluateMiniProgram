@@ -94,6 +94,14 @@
 				yewuType: 1
 			};
 		},
+		// 页面分享
+		onShareAppMessage: function() {
+			return {
+				title: '业务委托',
+				desc: '',
+				path: '/pages/addEntrust/main'
+			}
+		},
 		methods: {
 			initData(){
 				this.projectName = '';

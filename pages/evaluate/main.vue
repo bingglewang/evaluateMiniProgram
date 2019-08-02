@@ -158,14 +158,16 @@
 				array3: ['简装', '毛坯', '精装', '豪装'],
 				array5: ['不限', '萝岗区', '南沙区', '从化区', '增城区', '天河区', '海珠区', '番禺区', '白云区', '花都区', '荔湾区', '越秀区', '黄埔区'],
 				array51: ['不限', '萝岗区', '南沙区', '从化区', '增城区', '天河区', '海珠区', '番禺区', '白云区', '花都区', '荔湾区', '越秀区', '黄埔区'],
-				array52: ['不限','禅城区','高明区','南海区','其他区','三水区','顺德区'],
-				array53: ['不限','恩平市','鹤山市','江海区','开平市','蓬江区','其他区','台山市','新会区'],
-				array54: ['不限','板芙镇','大涌镇','东凤镇','东区街道','东升镇','阜沙镇','港口镇','古镇镇','横栏镇','黄圃镇','火炬开发区街道','民众镇','南朗镇','南区街道','南头镇','三角镇','三乡镇','沙溪镇','神湾镇','石岐区街道','坦洲镇','五桂山街道','西区街道','小榄镇'],
-				array55: ['不限','佛冈县','连南瑶族自治区','连山壮族瑶族自治县','连州市','其他区','清城区','清新区','阳山县','英德市'],
-				array56: ['不限','潮安区','其他区','饶平县','湘桥区'],
-				array57: ['不限','潮南区','朝阳区','澄海区','濠江区','金平区','龙湖区','南澳县','其他区'],
+				array52: ['不限', '禅城区', '高明区', '南海区', '其他区', '三水区', '顺德区'],
+				array53: ['不限', '恩平市', '鹤山市', '江海区', '开平市', '蓬江区', '其他区', '台山市', '新会区'],
+				array54: ['不限', '板芙镇', '大涌镇', '东凤镇', '东区街道', '东升镇', '阜沙镇', '港口镇', '古镇镇', '横栏镇', '黄圃镇', '火炬开发区街道', '民众镇', '南朗镇',
+					'南区街道', '南头镇', '三角镇', '三乡镇', '沙溪镇', '神湾镇', '石岐区街道', '坦洲镇', '五桂山街道', '西区街道', '小榄镇'
+				],
+				array55: ['不限', '佛冈县', '连南瑶族自治区', '连山壮族瑶族自治县', '连州市', '其他区', '清城区', '清新区', '阳山县', '英德市'],
+				array56: ['不限', '潮安区', '其他区', '饶平县', '湘桥区'],
+				array57: ['不限', '潮南区', '朝阳区', '澄海区', '濠江区', '金平区', '龙湖区', '南澳县', '其他区'],
 				array4: this.generateArrayYear(),
-				array6:['广州市','佛山市','江门市','中山市','清远市','潮州市','汕头市'],
+				array6: ['广州市', '佛山市', '江门市', '中山市', '清远市', '潮州市', '汕头市'],
 				isShowRequired: false,
 				isShowNotice: false,
 				cellList: []
@@ -262,9 +264,9 @@
 			},
 			bindPickerChange5(e) {
 				this.index5 = e.mp.detail.value;
-				if(this.index5 == 0){
+				if (this.index5 == 0) {
 					this.distinct = '';
-				}else{
+				} else {
 					this.distinct = this.array5[this.index5];
 				}
 			},
@@ -273,19 +275,19 @@
 				this.city = this.array6[this.index6];
 				this.index5 = 0
 				this.distinct = '';
-				if(this.index6 == 0){
+				if (this.index6 == 0) {
 					this.array5 = this.array51
-				}else if(this.index6 == 1){
+				} else if (this.index6 == 1) {
 					this.array5 = this.array52
-				}else if(this.index6 == 2){
+				} else if (this.index6 == 2) {
 					this.array5 = this.array53
-				}else if(this.index6 == 3){
+				} else if (this.index6 == 3) {
 					this.array5 = this.array54
-				}else if(this.index6 == 4){
+				} else if (this.index6 == 4) {
 					this.array5 = this.array55
-				}else if(this.index6 == 5){
+				} else if (this.index6 == 5) {
 					this.array5 = this.array56
-				}else if(this.index6 == 6){
+				} else if (this.index6 == 6) {
 					this.array5 = this.array57
 				}
 			},
@@ -397,6 +399,14 @@
 					this.popErrorMsg = '请填写必要信息';
 					this.ohShitfadeOut();
 				}
+			}
+		},
+		// 页面分享
+		onShareAppMessage: function() {
+			return {
+				title: '在线评估',
+				desc: '一键评估，智能评估',
+				path: '/pages/evaluate/main'
 			}
 		},
 		created() {},
