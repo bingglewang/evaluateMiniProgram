@@ -1,0 +1,132 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/evaluate/main",
+			"style": {
+				"navigationBarTitleText": "在线评估"
+			}
+		},
+		{
+			"path": "pages/index/main",
+			"style": {
+				"navigationBarTitleText": "我的信息"
+			}
+		},
+		{
+			"path": "pages/user/main",
+			"style": {
+				"navigationBarTitleText": "个人资料"
+			}
+		},
+		{
+			"path": "pages/list/main",
+			"style": {
+				"navigationBarTitleText": "评估记录"
+			}
+		},
+		{
+			"path": "pages/result/main",
+			"style": {
+				"navigationBarTitleText": "查询结果"
+			}
+		},
+		{
+			"path": "pages/login/main",
+			"style": {
+				"navigationBarTitleText": "登录授权"
+			}
+		},
+		{
+			"path": "pages/about/main",
+			"style": {
+				"navigationBarTitleText": "联系评估"
+			}
+		},
+		{
+			"path": "pages/suggestion/main",
+			"style": {
+				"navigationBarTitleText": "意见反馈"
+			}
+		},
+		{
+			"path": "pages/history/main",
+			"style": {
+				"navigationBarTitleText": "评估记录"
+			}
+		},
+		{
+			"path": "pages/suggestionResult/main",
+			"style": {
+				"navigationBarTitleText": "反馈结果"
+			}
+		},
+		{
+			"path": "pages/server/main",
+			"style": {
+				"navigationBarTitleText": "腾业评估"
+			}
+		},
+		{
+			"path": "pages/myqr/main",
+			"style": {
+				"navigationBarTitleText": "二维码"
+			}
+		},
+		{
+			"path": "pages/yewuweituo/main",
+			"style": {
+				"navigationBarTitleText": "评估进度"
+			}
+		},
+		{
+			"path": "pages/HM-search/HM-search",
+			"style": {
+				"navigationBarTitleText": "评估进度"
+			}
+		},
+		{
+			"path": "pages/scannerCode/main",
+			"style": {
+				"navigationBarTitleText": "防伪查询"
+			}
+		},
+		{
+			"path": "pages/addEntrust/main",
+			"style": {
+				"navigationBarTitleText": "业务委托"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#666",
+		"selectedColor": "white",
+		"backgroundColor": "#f4c153",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/evaluate/main",
+				"text": "评估",
+				"iconPath": "/static/images/evaluate1.png",
+				"selectedIconPath": "/static/images/evaluate2.png"
+			},
+			{
+				"pagePath": "pages/server/main",
+				"text": "服务",
+				"iconPath": "static/images/server.png",
+				"selectedIconPath": "static/images/server_in.png"
+			},
+			{
+				"pagePath": "pages/index/main",
+				"text": "我的",
+				"iconPath": "static/images/user.png",
+				"selectedIconPath": "static/images/user_in.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#f4c153",
+		"navigationBarTitleText": "房地产评估",
+		"navigationBarTextStyle": "white",
+		"enablePullDownRefresh": false
+	}
+}

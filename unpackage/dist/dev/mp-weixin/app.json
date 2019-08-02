@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/evaluate/main",
+    "pages/index/main",
+    "pages/user/main",
+    "pages/list/main",
+    "pages/result/main",
+    "pages/login/main",
+    "pages/about/main",
+    "pages/suggestion/main",
+    "pages/history/main",
+    "pages/suggestionResult/main",
+    "pages/server/main",
+    "pages/myqr/main",
+    "pages/yewuweituo/main",
+    "pages/HM-search/HM-search",
+    "pages/scannerCode/main",
+    "pages/addEntrust/main"
+  ],
+  "subPackages": [],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f4c153",
+    "navigationBarTitleText": "房地产评估",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "white",
+    "backgroundColor": "#f4c153",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/evaluate/main",
+        "text": "评估",
+        "iconPath": "/static/images/evaluate1.png",
+        "selectedIconPath": "/static/images/evaluate2.png"
+      },
+      {
+        "pagePath": "pages/server/main",
+        "text": "服务",
+        "iconPath": "static/images/server.png",
+        "selectedIconPath": "static/images/server_in.png"
+      },
+      {
+        "pagePath": "pages/index/main",
+        "text": "我的",
+        "iconPath": "static/images/user.png",
+        "selectedIconPath": "static/images/user_in.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位当前位置"
+    }
+  },
+  "usingComponents": {}
+}

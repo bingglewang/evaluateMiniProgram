@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "评估进度",
+  "usingComponents": {
+    "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision"
+  }
+}
