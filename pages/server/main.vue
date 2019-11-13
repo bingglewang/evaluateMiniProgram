@@ -24,17 +24,17 @@
 					</view>
 					<view class="text">发送位置</view>
 				</view>
-				<view class="box" @tap="handling">
+				<view class="box" @tap="toPage('../rongzifuwu/main')">
 					<view class="img">
 						<image src="../../static/rongzi.png"></image>
 					</view>
 					<view class="text">融资服务</view>
 				</view>
-				<view class="box" @tap="handling">
+				<view class="box" @tap="toPage('../zichanchuzhi/main')">
 					<view class="img">
 						<image src="../../static/tougu.png"></image>
 					</view>
-					<view class="text">投顾服务</view>
+					<view class="text">资产处置</view>
 				</view>
 			</view>
 		</view>
@@ -98,6 +98,7 @@
 					duration: 600
 				});
 			},
+			
 			doSendLocation() {
 				let that = this;
 				uni.showLoading({

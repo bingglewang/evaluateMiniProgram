@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/server/main",
     "pages/evaluate/main",
     "pages/index/main",
     "pages/user/main",
@@ -10,12 +11,13 @@
     "pages/suggestion/main",
     "pages/history/main",
     "pages/suggestionResult/main",
-    "pages/server/main",
     "pages/myqr/main",
     "pages/yewuweituo/main",
     "pages/HM-search/HM-search",
     "pages/scannerCode/main",
-    "pages/addEntrust/main"
+    "pages/addEntrust/main",
+    "pages/zichanchuzhi/main",
+    "pages/rongzifuwu/main"
   ],
   "subPackages": [],
   "window": {
@@ -32,16 +34,16 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/evaluate/main",
-        "text": "评估",
-        "iconPath": "/static/images/evaluate1.png",
-        "selectedIconPath": "/static/images/evaluate2.png"
-      },
-      {
         "pagePath": "pages/server/main",
         "text": "服务",
         "iconPath": "static/images/server.png",
         "selectedIconPath": "static/images/server_in.png"
+      },
+      {
+        "pagePath": "pages/evaluate/main",
+        "text": "评估",
+        "iconPath": "/static/images/evaluate1.png",
+        "selectedIconPath": "/static/images/evaluate2.png"
       },
       {
         "pagePath": "pages/index/main",
@@ -56,6 +58,5 @@
       "desc": "定位当前位置"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap51.json"
+  "usingComponents": {}
 }

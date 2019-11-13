@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/server/main",
+			"style": {
+				"navigationBarTitleText": "腾业评估"
+			}
+		},
+		{
 			"path": "pages/evaluate/main",
 			"style": {
 				"navigationBarTitleText": "在线评估"
@@ -61,12 +67,6 @@
 			}
 		},
 		{
-			"path": "pages/server/main",
-			"style": {
-				"navigationBarTitleText": "腾业评估"
-			}
-		},
-		{
 			"path": "pages/myqr/main",
 			"style": {
 				"navigationBarTitleText": "二维码"
@@ -95,6 +95,20 @@
 			"style": {
 				"navigationBarTitleText": "业务委托"
 			}
+		},
+		{
+			"path": "pages/zichanchuzhi/main",
+			"style": {
+				"navigationBarTitleText": "资产处置"
+			}
+		},
+		{
+			"path": "pages/rongzifuwu/main",
+			"style": {
+				"navigationBarTitleText": "融资服务",
+				"backgroundTextStyle": "light",
+				"navigationBarBackgroundColor": "#CC2818"				
+			}
 		}
 	],
 	"tabBar": {
@@ -102,17 +116,18 @@
 		"selectedColor": "white",
 		"backgroundColor": "#f4c153",
 		"borderStyle": "black",
-		"list": [{
-				"pagePath": "pages/evaluate/main",
-				"text": "评估",
-				"iconPath": "/static/images/evaluate1.png",
-				"selectedIconPath": "/static/images/evaluate2.png"
-			},
+		"list": [
 			{
 				"pagePath": "pages/server/main",
 				"text": "服务",
 				"iconPath": "static/images/server.png",
 				"selectedIconPath": "static/images/server_in.png"
+			},
+			{
+				"pagePath": "pages/evaluate/main",
+				"text": "评估",
+				"iconPath": "/static/images/evaluate1.png",
+				"selectedIconPath": "/static/images/evaluate2.png"
 			},
 			{
 				"pagePath": "pages/index/main",
