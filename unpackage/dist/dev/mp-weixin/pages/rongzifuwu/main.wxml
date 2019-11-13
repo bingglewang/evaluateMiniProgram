@@ -1,0 +1,1 @@
+<view class="rongzifuhome"><image class="backimg" src="../../static/images/rongzifuwu.jpg" data-src="https://zs-1256645015.cos.ap-guangzhou.myqcloud.com/traceueditor/image/rongzifuwu.jpg" data-event-opts="{{[['tap',[['previewImage',['$event']]]]]}}" bindtap="__e"></image></view>
