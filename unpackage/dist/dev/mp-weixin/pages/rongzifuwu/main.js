@@ -122,27 +122,102 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {};
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var minActionSheet = function minActionSheet() {return __webpack_require__.e(/*! import() | components/min-action-sheet/min-action-sheet */ "components/min-action-sheet/min-action-sheet").then(__webpack_require__.bind(null, /*! @/components/min-action-sheet/min-action-sheet */ 202));};var _default =
 
+
+
+
+
+
+
+
+
+{
+  components: {
+    minActionSheet: minActionSheet },
+
+  data: function data() {
+    return {
+      timestart: 0,
+      timeend: 0 };
 
   },
   methods: {
-    previewImage: function previewImage(e) {
-      var current = e.target.dataset.src;
-      console.log('图片路径：' + current);
-      uni.previewImage({
-        current: 0,
-        urls: [current] });
+    testAs1: function testAs1() {
+      var _this = this;
+      this.$refs.as.handleShow({
+        actions: [{
+          name: '保存',
+          icon: 'iconfont active',
+          color: '#007aff' }],
+
+
+        success: function success(res) {
+          switch (res.id) {
+            // -1代表取消按钮
+            case -1:
+              console.log(res);
+              break;
+            case 0:
+              _this.saveImgPhotoshop();
+              break;}
+
+        } });
+
+    },
+    //点击开始的时间  
+    timestartF: function timestartF(e) {
+      this.timestart = e.timeStamp;
+    },
+    //点击结束的时间
+    timeendF: function timeendF(e) {
+      this.timeend = e.timeStamp;
+    },
+
+    //保存图片
+    saveImg: function saveImg(e) {
+      var _this = this;
+      var times = _this.timeend - _this.timestart;
+      if (times > 300) {
+        _this.testAs1();
+
+      }
+    },
+    saveImgPhotoshop: function saveImgPhotoshop() {
+      uni.getSetting({
+        success: function success(res) {
+          uni.authorize({
+            scope: 'scope.writePhotosAlbum',
+            success: function success(res) {
+              var imgUrl = "http://zs-1256645015.cos.ap-guangzhou.myqcloud.com/traceueditor/image/rongzifuwu.jpg";
+              uni.downloadFile({ //下载文件资源到本地，客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径
+                url: imgUrl,
+                success: function success(res) {
+                  uni.showToast({
+                    title: '成授权成功册',
+                    icon: 'success' });
+
+                  // 下载成功后再保存到本地
+                  uni.saveImageToPhotosAlbum({
+                    filePath: res.tempFilePath, //返回的临时文件路径，下载后的文件会存储到一个临时文件
+                    success: function success(res) {
+                      uni.showToast({
+                        title: '成功保存到相册',
+                        icon: 'success' });
+
+                    } });
+
+                },
+                fail: function fail(resfail) {
+                  uni.showToast({
+                    title: resfail,
+                    icon: 'success' });
+
+                } });
+
+            } });
+
+        } });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
