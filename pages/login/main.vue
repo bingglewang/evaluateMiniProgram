@@ -94,7 +94,7 @@
           console.log("后台请求数据：" + res1);
 					if(res1.status == 0 || res1.status == -1){
 						 wx.reLaunch({
-							url: '../evaluate/main'
+							url: '../server/main'
 						})	
 					}else{
 							wx.showToast({

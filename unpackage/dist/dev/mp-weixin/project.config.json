@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
 	"appid": "wx5a36af365642441e",
-	"projectname": "%E5%9C%A8%E7%BA%BF%E8%AF%84%E4%BC%B0",
+	"projectname": "在线评估",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

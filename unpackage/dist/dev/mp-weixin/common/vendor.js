@@ -734,7 +734,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7943,7 +7943,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7964,14 +7964,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8047,7 +8047,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8435,28 +8435,6 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 25:
-/*!***********************************************************!*\
-  !*** E:/project/evaluateMiniProgram/static/images/up.png ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAF1UlEQVR4Xu2cy4scdRDHq3pkw9ozNw+C4D+gYEI8eJDp2Y3i0UyGJXqIUSMSX2BOHgTBi3gSD74Oak5CIE5vxAcK4uyO4sVHNCB4VPQi4nNmoxi7S2bNJLsm6/RU96+7f1W11+2a7e/389nqmenZRbAv1Q2g6vQWHkwA5RKYACaA8gaUx7cNYAIob0B5fNsAJoDyBpTHtw1gAihvQHl82wAmgPIGlMe3DWACKG9AeXzbACaA8gaUx7cNYAIob0B5fNsAJoDyBpTHtw1gAihvQHl82wAmgPIGlMe3DWACKG9AeXzbACaA8gaUx7cNYAIob0B5fNsAJoDyBpTHtw1gAihvQHl82wAmgPIGlMe3DWACKG9AeXzbACaAvgbo45XFs+fSO1OgayfpEeGbMPn5BC6t/amtDXUbYGPYvZ3S4CVAuHobbKLvMYCjYTt+W5MEqgQYDXtPIsET/wcYiR4PO/FTWiRQI8Bo7cALiPhANrD0bDOKj2U71u+jVAgwH/wpUB0SiBeAB1+PBKIFyAf/XwmI6MVWJ37Q70W/89mLFaAI+Bf2gGAJRApQJHzpEogTwAX8rRI0o/ghRCAplwRRAriEfwE40fEwio9IkUCMAKXAv7gKxEggQoBS4W+X4D5ESH2+HHgvQCXwL14PXgvb8V0+S+C1AAXAPwMACQDs4f8Wk9cSeCtAXvhEMA4CihqIv/6dwBlACPNJ0DiMeHIik1dfXgpQCHyg5bATfzKh9cege3MS4HsAeCWXHhG93owad/gmgXcCFA1/ClyrBF4J4Aq+Zgm8EcA1/EIlAOg328FBHy4HXghQFvxCJfDkOUHtBSgbvjYJai1AVfA1SVBbAaqGr0WCWgpQF/gaJKidAHWDX7wE8cE63TuolQB1hb9NAsT3AXEX9x1DgHrdO6iNAHWHPwU+Wu8uI+E7UiSohQC+wJcoQeUC5IYPNAoI9k1v7PBX83yTUjZBpQLkhj+5pbvlrt58CPMfvSkBBG8BwCL/0TafExyq6jOGlQngO/xCLwcVftC0EgGkwJcgQekCSIPvuwSlCiAVvs8SlCaAdPi+SlCKAFrgFy1BsxPfy391kW3SuQDj9d7TAPBYttO59KjNT+9W+FKPe95FvE9ARC83o/h+ly8RnQowXuveAxi8yi3RV/hFbgIEOBJGfXaHs7p3JgB9tbKw8WP67SX/jWvWGZ3/PgH8HhDdUvY7fBlPL/NhuTcB0Q9h1LjG1ecLnQkwHvZuA4J3Mze15cAJfEyTqLl06gvOfN1m8kpAkO5rRasfuMjlToC17jHA4Jl5T1oa/CIuB4TwSKvdf27eLrMc706A4YG7gfB4lpOYHiMVfl4JCODhVtR/fp4usx7rToDB/t0QNE5nPREi+A0p6UhZ+zvlZl0O0mSPq16cCTApYLze+xQA9s6SYPqHmmE7/nzWsRK+P5cERF82O/FuV7mdCjAadK/HIPgMABZ2CkAAv2CaLLsy3FVxeR/3/JPk1Rm3ks810nR5cWn1o7w/b6d5pwJMfujGh/v3UhK8Aog3/PckCGh9IcWju5b6X7sKWOfH3Rj0biSENy//Upm+I4LDrU48cJnBuQCTkyeCYGPYOwRAtxJACwBOY5qe0vZbfzmQNFhpng2SRwngJgJoAuBPCOkb4VVXnMDrTv7lEv7ksUsRwHUIe3x+AyYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRkyaACIz8ECYAvzsRk/8AhxzQn3hkrVIAAAAASUVORK5CYII="
-
-/***/ }),
-
-/***/ 26:
-/*!*************************************************************!*\
-  !*** E:/project/evaluateMiniProgram/static/images/down.png ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,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"
-
-/***/ }),
-
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -8488,14 +8466,25 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 35:
-/*!***************************************************************!*\
-  !*** E:/project/evaluateMiniProgram/static/images/right3.png ***!
-  \***************************************************************/
+/***/ 33:
+/*!***********************************************************!*\
+  !*** E:/project/evaluateMiniProgram/static/images/up.png ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABiUlEQVRIS93Tv0vDQBTA8XdoxKiQZHBw8D8QXB0K/kApQnHSvVOHLrlmKXTx/oAuadqCnYqbm4uICAp1cRZxFRwcCmIKYtLE3JMbXAR7l9gOmikQ7vvh3SMEJvyQCffhnwOO46xyzt0oigrtdvsty3WOvCLG2Izv++eIOB/H8XYWRLqDYrE4a5rmmUCCINjqdDrvaSaRAiImEMMwLsV7EAT5NIgSIMKlUmlO1/UrAIgHg8FOt9sNVSZRBkSsXC4vaJrWI4S8mqa5yxiLZEgqQMSq1aoRhuE1APQty9qTIamBL2Q4HN4g4rNlWQXG2MdPk2QCRMy27RohpMY5X2s0GvdjBSilh4jocM7znufdjtpD2gmIbdtHhJADRFx3XfdubEtmjE37vn8CALkkSTY9z3uQxcV3pQkqlYqOiKeIuJIkSa7ZbD6qxJUASqkJABeIuAgAG67rPqnGpQCldAkRxd87pWlarl6v99PEpYDjOMuc8+M4jvdbrdZL2rgUyBL8fkZpyb+B/j7wCfBEnxl53hPzAAAAAElFTkSuQmCC"
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ 34:
+/*!*************************************************************!*\
+  !*** E:/project/evaluateMiniProgram/static/images/down.png ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
 
 /***/ }),
 
@@ -8511,75 +8500,14 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADg
 
 /***/ }),
 
-/***/ 46:
-/*!*****************************************************!*\
-  !*** E:/project/evaluateMiniProgram/utils/index.js ***!
-  \*****************************************************/
+/***/ 43:
+/*!***************************************************************!*\
+  !*** E:/project/evaluateMiniProgram/static/images/right3.png ***!
+  \***************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.formatTime = formatTime;exports.dateFormat = dateFormat;exports.default = void 0;function formatNumber(n) {
-  var str = n.toString();
-  return str[1] ? str : "0".concat(str);
-}
-
-function formatTime(date) {
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
-
-  var hour = date.getHours();
-  var minute = date.getMinutes();
-  var second = date.getSeconds();
-
-  var t1 = [year, month, day].map(formatNumber).join('/');
-  var t2 = [hour, minute, second].map(formatNumber).join(':');
-
-  return "".concat(t1, " ").concat(t2);
-}
-
-
-/**
-   * 对Date的扩展，将 Date 转化为指定格式的String
-   * 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
-   * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
-   * 例子：
-   * (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
-   * (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
-   *
-   * @param fmt
-   * @returns {*}
-   */
-function dateFormat(date, fmt) {
-  if (/(y+)/.test(fmt)) {
-    fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
-  }
-  var o = {
-    'M+': date.getMonth() + 1,
-    'd+': date.getDate(),
-    'h+': date.getHours(),
-    'm+': date.getMinutes(),
-    's+': date.getSeconds() };
-
-  for (var k in o) {
-    if (new RegExp("(".concat(k, ")")).test(fmt)) {
-      var str = o[k] + '';
-      fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? str : padLeftZero(str));
-    }
-  }
-
-  function padLeftZero(str) {
-    return ('00' + str).substr(str.length);
-  }
-
-  return fmt;
-}var _default =
-
-{
-  formatNumber: formatNumber,
-  formatTime: formatTime,
-  dateFormat: dateFormat };exports.default = _default;
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABiUlEQVRIS93Tv0vDQBTA8XdoxKiQZHBw8D8QXB0K/kApQnHSvVOHLrlmKXTx/oAuadqCnYqbm4uICAp1cRZxFRwcCmIKYtLE3JMbXAR7l9gOmikQ7vvh3SMEJvyQCffhnwOO46xyzt0oigrtdvsty3WOvCLG2Izv++eIOB/H8XYWRLqDYrE4a5rmmUCCINjqdDrvaSaRAiImEMMwLsV7EAT5NIgSIMKlUmlO1/UrAIgHg8FOt9sNVSZRBkSsXC4vaJrWI4S8mqa5yxiLZEgqQMSq1aoRhuE1APQty9qTIamBL2Q4HN4g4rNlWQXG2MdPk2QCRMy27RohpMY5X2s0GvdjBSilh4jocM7znufdjtpD2gmIbdtHhJADRFx3XfdubEtmjE37vn8CALkkSTY9z3uQxcV3pQkqlYqOiKeIuJIkSa7ZbD6qxJUASqkJABeIuAgAG67rPqnGpQCldAkRxd87pWlarl6v99PEpYDjOMuc8+M4jvdbrdZL2rgUyBL8fkZpyb+B/j7wCfBEnxl53hPzAAAAAElFTkSuQmCC"
 
 /***/ }),
 
@@ -9470,6 +9398,78 @@ main();
 
 /***/ }),
 
+/***/ 54:
+/*!*****************************************************!*\
+  !*** E:/project/evaluateMiniProgram/utils/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.formatTime = formatTime;exports.dateFormat = dateFormat;exports.default = void 0;function formatNumber(n) {
+  var str = n.toString();
+  return str[1] ? str : "0".concat(str);
+}
+
+function formatTime(date) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+
+  var t1 = [year, month, day].map(formatNumber).join('/');
+  var t2 = [hour, minute, second].map(formatNumber).join(':');
+
+  return "".concat(t1, " ").concat(t2);
+}
+
+
+/**
+   * 对Date的扩展，将 Date 转化为指定格式的String
+   * 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+   * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+   * 例子：
+   * (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+   * (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
+   *
+   * @param fmt
+   * @returns {*}
+   */
+function dateFormat(date, fmt) {
+  if (/(y+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+  }
+  var o = {
+    'M+': date.getMonth() + 1,
+    'd+': date.getDate(),
+    'h+': date.getHours(),
+    'm+': date.getMinutes(),
+    's+': date.getSeconds() };
+
+  for (var k in o) {
+    if (new RegExp("(".concat(k, ")")).test(fmt)) {
+      var str = o[k] + '';
+      fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? str : padLeftZero(str));
+    }
+  }
+
+  function padLeftZero(str) {
+    return ('00' + str).substr(str.length);
+  }
+
+  return fmt;
+}var _default =
+
+{
+  formatNumber: formatNumber,
+  formatTime: formatTime,
+  dateFormat: dateFormat };exports.default = _default;
+
+/***/ }),
+
 /***/ 6:
 /*!******************************************************!*\
   !*** ./node_modules/@dcloudio/uni-stat/package.json ***!
@@ -9481,7 +9481,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 
 /***/ }),
 
-/***/ 61:
+/***/ 69:
 /*!*************************************************************!*\
   !*** E:/project/evaluateMiniProgram/static/images/logo.png ***!
   \*************************************************************/
@@ -9500,18 +9500,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlkAAAKQCAYAAACs
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/evaluate/main": { "navigationBarTitleText": "在线评估", "usingComponents": {} }, "pages/index/main": { "navigationBarTitleText": "我的信息", "usingComponents": {} }, "pages/user/main": { "navigationBarTitleText": "个人资料", "usingComponents": {} }, "pages/list/main": { "navigationBarTitleText": "评估记录", "usingComponents": { "mp-search": "/mp-weui/packages/search/index" } }, "pages/result/main": { "navigationBarTitleText": "查询结果", "usingComponents": {} }, "pages/login/main": { "navigationBarTitleText": "登录授权", "usingComponents": {} }, "pages/about/main": { "navigationBarTitleText": "联系评估", "usingComponents": {} }, "pages/suggestion/main": { "navigationBarTitleText": "意见反馈", "usingComponents": {} }, "pages/history/main": { "navigationBarTitleText": "评估记录", "usingComponents": {} }, "pages/suggestionResult/main": { "navigationBarTitleText": "反馈结果", "usingComponents": {} }, "pages/server/main": { "navigationBarTitleText": "腾业评估", "usingComponents": {} }, "pages/myqr/main": { "navigationBarTitleText": "二维码", "usingComponents": {} }, "pages/yewuweituo/main": { "navigationBarTitleText": "评估进度", "usingComponents": { "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision" } }, "pages/HM-search/HM-search": { "navigationBarTitleText": "评估进度", "usingComponents": { "m-search": "/components/mehaotian-search-revision/mehaotian-search-revision" } }, "pages/scannerCode/main": { "navigationBarTitleText": "防伪查询", "usingComponents": {} }, "pages/addEntrust/main": { "navigationBarTitleText": "业务委托", "usingComponents": {} }, "pages/zichanchuzhi/main": { "navigationBarTitleText": "资产处置", "usingComponents": {} }, "pages/rongzifuwu/main": { "navigationBarTitleText": "融资服务", "backgroundTextStyle": "light", "navigationBarBackgroundColor": "#CC2818", "usingComponents": {} } }, "globalStyle": { "backgroundTextStyle": "light", "navigationBarBackgroundColor": "#f4c153", "navigationBarTitleText": "房地产评估", "navigationBarTextStyle": "white", "enablePullDownRefresh": false } };exports.default = _default;
-
-/***/ }),
-
-/***/ 78:
-/*!***************************************************************!*\
-  !*** E:/project/evaluateMiniProgram/static/images/wxnode.png ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "static/img/wxnode.290115ad.png";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/server/main": { "navigationBarTitleText": "腾业评估" }, "pages/evaluate/main": { "navigationBarTitleText": "在线评估" }, "pages/index/main": { "navigationBarTitleText": "我的信息" }, "pages/user/main": { "navigationBarTitleText": "个人资料" }, "pages/list/main": { "navigationBarTitleText": "评估记录" }, "pages/result/main": { "navigationBarTitleText": "查询结果" }, "pages/login/main": { "navigationBarTitleText": "登录授权" }, "pages/about/main": { "navigationBarTitleText": "联系评估" }, "pages/suggestion/main": { "navigationBarTitleText": "意见反馈" }, "pages/history/main": { "navigationBarTitleText": "评估记录" }, "pages/suggestionResult/main": { "navigationBarTitleText": "反馈结果" }, "pages/myqr/main": { "navigationBarTitleText": "二维码" }, "pages/yewuweituo/main": { "navigationBarTitleText": "评估进度" }, "pages/HM-search/HM-search": { "navigationBarTitleText": "评估进度" }, "pages/scannerCode/main": { "navigationBarTitleText": "防伪查询" }, "pages/addEntrust/main": { "navigationBarTitleText": "业务委托" }, "pages/zichanchuzhi/main": { "navigationBarTitleText": "资产处置" }, "pages/rongzifuwu/main": { "navigationBarTitleText": "融资服务", "backgroundTextStyle": "light", "navigationBarBackgroundColor": "#CC2818" } }, "globalStyle": { "backgroundTextStyle": "light", "navigationBarBackgroundColor": "#f4c153", "navigationBarTitleText": "房地产评估", "navigationBarTextStyle": "white", "enablePullDownRefresh": false } };exports.default = _default;
 
 /***/ }),
 
@@ -9524,6 +9513,17 @@ module.exports = __webpack_require__.p + "static/img/wxnode.290115ad.png";
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__9F3D05F" };exports.default = _default;
+
+/***/ }),
+
+/***/ 86:
+/*!***************************************************************!*\
+  !*** E:/project/evaluateMiniProgram/static/images/wxnode.png ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/wxnode.290115ad.png";
 
 /***/ })
 
