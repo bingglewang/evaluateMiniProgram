@@ -58,6 +58,5 @@
       "desc": "定位当前位置"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

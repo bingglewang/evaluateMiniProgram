@@ -1,6 +1,6 @@
 <template>
 	<view class="rongzifuhome">
-		<image src="../../static/images/rongzifuwu.jpg" @touchstart='timestartF' @touchend='timeendF' @tap='saveImg' class="backimg"></image>
+		<image src="../../static/images/rongzifuwu.png" @touchstart='timestartF' @touchend='timeendF' @tap='saveImg' class="backimg"></image>
 		<min-action-sheet ref="as"></min-action-sheet>
 	</view>
 
@@ -60,7 +60,7 @@
 				}
 			},
 			 saveToBlum:function(){
-			    let imgUrl = '../../static/images/rongzifuwu.jpg';
+			    let imgUrl = '../../static/images/rongzifuwu.png';
 			    wx.getImageInfo({
 			      src: imgUrl,
 			      success: function (ret) {

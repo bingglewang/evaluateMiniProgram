@@ -1,6 +1,9 @@
 <template>
 	<view class="record-page">
-		<mp-search @confirm="onSearchConfirm" @change="onSearchChange" placeholder="输入小区名/地址" v-model="inputSearch" />
+		<view class="search-box1">
+			<mSearch style="width: 100%;" class="mSearch-input-box" :mode="2" button="inside" :placeholder="placeholder" @search="onSearchConfirm"  @confirm="onSearchConfirm" v-model="inputSearch"></mSearch>
+		</view>
+		<!-- <mp-search @confirm="onSearchConfirm" @change="onSearchChange" placeholder="输入小区名/地址" v-model="inputSearch" /> -->
 		<view class="content-container">
 			<view class="content-list-card" v-for="(item,index) in recordList " :index="index" :key="index" :data-index="index"
 			 @click="toResultPage(item.id)">
@@ -29,16 +32,17 @@
 </template>
 
 <script>
-	import MpSearch from 'mp-weui/packages/search'
+	import mSearch from '@/components/mehaotian-search-revision/mehaotian-search-revision.vue';
 	import {
 		dateFormat
 	} from '@/utils/index'
 	export default {
 		components: {
-			MpSearch
+			mSearch
 		},
 		data() {
 			return {
+				placeholder: '输入小区名/地址',
 				inputSearch: '',
 				currentPage: 1,
 				recordList: [],
@@ -62,15 +66,16 @@
 				});
 			},
 			onSearchConfirm(val) {
+				console.log(2222,val)
 				console.log(1111, this.inputSearch)
-				this.inputSearch = val;
 				this.initData();
 			},
-			onSearchChange(val) {
+		/* 	onSearchChange(val) {
+				key = key ? key : this.keyword ? this.keyword : '';
 				console.log(3232, val)
 				this.inputSearch = val;
 				this.initData();
-			},
+			}, */
 			async initData() {
 				// 显示顶部刷新图标
 				wx.showNavigationBarLoading();
@@ -167,6 +172,15 @@
 		height: 100%;
 		background: #f1f1f1;
 	}
+
+	.search-box1 {
+			width: 100%;
+			background-color: rgb(242, 242, 242);
+			padding: 15upx 2.5%;
+			display: flex;
+			justify-content: space-between;
+		}
+
 
 	.content-container {
 		width: 100%;
