@@ -11,14 +11,14 @@
 			<view  class="bg-white margin-bottom">
 				我们由法律、金融、拍卖、财务、企业管理等方面专业人才组成，接受企业产权转让和资产处置的外包服务，是进行产权和资产的交易策划、方案设计和组织实施的专业服务机构。公司经营项目包括金融资产（债权）处置、国有企业产权转让和资产处置、企业改制兼并与收购、资产重组及债务重组等。
 			</view>
-			<view  class="bg-white">
+			<!-- <view  class="bg-white">
 				<view>
 					联系电话: ****
 				</view>
 				<view>
 					联系人: ***
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>

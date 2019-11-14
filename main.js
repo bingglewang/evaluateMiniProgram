@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App'
 
 import {post,post1} from './utils/api'
-import './weui.css'
 
 Vue.prototype.$post = post
 Vue.prototype.$post1 = post1
