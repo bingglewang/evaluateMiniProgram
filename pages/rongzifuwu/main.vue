@@ -35,7 +35,7 @@
 								console.log(res)
 								break
 							case 0:
-								_this.saveImgPhotoshop();
+								_this.saveToBlum();
 								break
 						}
 					}
@@ -59,6 +59,24 @@
 					
 				}
 			},
+			 saveToBlum:function(){
+			    let imgUrl = '../../static/images/rongzifuwu.jpg';
+			    wx.getImageInfo({
+			      src: imgUrl,
+			      success: function (ret) {
+			        var path = ret.path;
+			        wx.saveImageToPhotosAlbum({
+			          filePath: path,
+			          success(result) {
+			            wx.showToast({
+			              title: '保存成功',
+			              icon: 'success'
+			            })
+			          },
+			        })
+			      }
+			    })
+			  },
 			saveImgPhotoshop(){
 				uni.getSetting({
 					success: function(res) {
@@ -82,12 +100,6 @@
 													icon: 'success'
 												})
 											}
-										})
-									},
-									fail:function(resfail){
-										uni.showToast({
-											title: resfail,
-											icon: 'success'
 										})
 									}
 								})

@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var minActionSheet = function minActionSheet() {return __webpack_require__.e(/*! import() | components/min-action-sheet/min-action-sheet */ "components/min-action-sheet/min-action-sheet").then(__webpack_require__.bind(null, /*! @/components/min-action-sheet/min-action-sheet */ 202));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var minActionSheet = function minActionSheet() {return __webpack_require__.e(/*! import() | components/min-action-sheet/min-action-sheet */ "components/min-action-sheet/min-action-sheet").then(__webpack_require__.bind(null, /*! @/components/min-action-sheet/min-action-sheet */ 181));};var _default =
 
 
 
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
               console.log(res);
               break;
             case 0:
-              _this.saveImgPhotoshop();
+              _this.saveToBlum();
               break;}
 
         } });
@@ -182,6 +182,24 @@ __webpack_require__.r(__webpack_exports__);
         _this.testAs1();
 
       }
+    },
+    saveToBlum: function saveToBlum() {
+      var imgUrl = '../../static/images/rongzifuwu.jpg';
+      wx.getImageInfo({
+        src: imgUrl,
+        success: function success(ret) {
+          var path = ret.path;
+          wx.saveImageToPhotosAlbum({
+            filePath: path,
+            success: function success(result) {
+              wx.showToast({
+                title: '保存成功',
+                icon: 'success' });
+
+            } });
+
+        } });
+
     },
     saveImgPhotoshop: function saveImgPhotoshop() {
       uni.getSetting({
@@ -206,12 +224,6 @@ __webpack_require__.r(__webpack_exports__);
                         icon: 'success' });
 
                     } });
-
-                },
-                fail: function fail(resfail) {
-                  uni.showToast({
-                    title: resfail,
-                    icon: 'success' });
 
                 } });
 
